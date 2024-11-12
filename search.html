@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Search</h1>
+        <input type="text" id="searchInput" placeholder="Enter a slang word">
+        <button id="searchBtn" class="random-btn">Search</button>
+        <div id="searchResult" class="slang-box"></div>
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResult = document.getElementById('searchResult');
+        const searchInput = document.getElementById('searchInput');
+
+        const slangWords = [
+            { word: "Astig", meaning: "Cool or awesome", example: "That new song is so astig!" },
+            { word: "Gigil", meaning: "The urge to pinch or squeeze someone cute", example: "I get gigil when I see my little nephew." },
+            // ... add all slang words
+        ];
+
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.toLowerCase();
+            const result = slangWords.find(slang => slang.word.toLowerCase() === query);
+
+            if (result) {
+                searchResult.textContent = `${result.word}: ${result.meaning}\nExample: ${result.example}`;
+            } else {
+                searchResult.textContent = 'Word not found.';
+            }
+        });
+    </script>
+</body>
+</html>

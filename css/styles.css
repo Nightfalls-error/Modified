@@ -1,7 +1,7 @@
 /* Styles for the navigation tabs */
 .nav-tabs {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: #5e463a;
     padding: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
